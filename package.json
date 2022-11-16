@@ -1,0 +1,36 @@
+{
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjohnson673/team-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjohnson673/team-builder/issues"
+  },
+  "homepage": "https://github.com/jjohnson673/team-builder#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+  "scripts": {
+    "test": "jest --verbose test/*",
+    "start": "node index.js",
+    "reset": "node reset.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
