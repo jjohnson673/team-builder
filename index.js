@@ -103,8 +103,8 @@ function appMenu() {
           case "Intern":
             addIntern();
             break;
-          default: "";
-           // generateCards(teamMembers, idArray);
+          default: buildTeam();
+  
         }
       });
   }
@@ -192,11 +192,12 @@ function appMenu() {
     if (!fs.existsSync(DIST_DIR)) {
       fs.mkdirSync(DIST_DIR);
     }
-    const teamrender = render(teamMembers);
     fs.writeFileSync(distPath, render(teamMembers), 'utf-8');
   }
 
+
   createManager();
 }
+
 
 appMenu();

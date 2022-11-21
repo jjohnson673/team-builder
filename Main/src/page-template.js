@@ -13,7 +13,7 @@ const generateTeam = team => {
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
+                <li class="list-group-item">Office number: ${manager.getOffice()}</li>
             </ul>
         </div>
     </div>
@@ -23,7 +23,8 @@ const generateTeam = team => {
     // create the html for engineers
     const generateEngineer = engineer => {
         //code goes here
-        `<div class="card employee-card">
+        return `
+        <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${engineer.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
@@ -42,7 +43,8 @@ const generateTeam = team => {
     // create the html for interns
     const generateIntern = intern => {
         //code goes here
-        `<div class="card employee-card">
+        return `
+        <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${intern.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
