@@ -88,6 +88,12 @@ function appMenu() {
 
   function createTeam() {
     //code goes here
+    inquirer
+      .prompt([
+        {
+          
+        }
+      ])
   }
 
   function addEngineer() {
