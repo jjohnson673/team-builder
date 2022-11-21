@@ -91,17 +91,102 @@ function appMenu() {
     inquirer
       .prompt([
         {
-          
+          type: "list",
+				  name: "teamMember",
+				  message: "What role are you looking to add?",
+				  choices: ["Engineer", "Intern", "Finished Adding Roles" ]
         }
       ])
+      .then(answer => {
+        switch (answer.teamMember) {
+          case "Engineer":
+            addEngineer();
+            break;
+          case "Intern":
+            addIntern();
+            break;
+          default:
+            generateCards(teamMembers, idArray);
+        }
+      });
   }
 
   function addEngineer() {
     //code goes here
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "engineerName",
+          message: "What is the Engineer's name?"
+        },
+        {
+          type: "input",
+          name: "engineerId",
+          message: "What is the Engingeer's ID Number?"
+        },
+        {
+          type: "input",
+          name: "engineerEmail",
+          message: "What is the Engineer's email?"
+        },
+        {
+          type: "input",
+          name: "engineerGithub",
+          message: "What is the Engineer's GitHub username?"
+        }
+      ])
+
+      .then((answers) => {
+        const engineer = new Engineer(
+          answers.engineerName,
+          answers.engineerId,
+          answers.engineerEmail,
+          answers.engineerGithub
+        );
+        teamMembers.push(engineer);
+        idArray.push(answers.engineerId);
+        createTeam();
+        });
   }
 
   function addIntern() {
     //code goes here
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "internName",
+          message: "What is the Intern's name?"
+        },
+        {
+          type: "input",
+          name: "internId",
+          message: "What is the Intern's ID number?"
+        },
+        {
+          type: "input",
+          name: "internEmail",
+          message: "What is the Intern's email?"
+        },
+        {
+          type: "input",
+          name: "internSchool",
+          message: "What school is the Intern currently enrolled in?"
+        }
+      ])
+
+      .then((answers) => {
+        const intern = new Intern(
+          answers.internName,
+          answers.internId,
+          answers.internId,
+          answers.internSchool
+        );
+        teamMembers.push(intern);
+        idArray.push(answers.internId);
+        createTeam();
+        });
   }
 
   function buildTeam() {
