@@ -193,7 +193,7 @@ function appMenu() {
       fs.mkdirSync(DIST_DIR);
     }
     const teamrender = render(teamMembers);
-    fs.writeFileSync(distPath, render(teamMembers), 'index.html');
+    fs.writeFileSync(distPath, render(teamMembers), 'utf-8');
   }
 
   createManager();
